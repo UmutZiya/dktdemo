@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@import "aos/dist/aos.css";
+@source "../";
+
+@theme inline {
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; overflow-wrap: break-word; }
+* { box-sizing: border-box; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button, a { touch-action: manipulation; }
+button { cursor: pointer; }
+button:disabled { cursor: wait; opacity: .65; }
+:focus-visible { outline: 3px solid #277f84; outline-offset: 4px; }
+input, select, textarea { min-width: 0; font-size: 1rem !important; }
+input:focus-visible, select:focus-visible, textarea:focus-visible { outline: none; }
+svg { flex-shrink: 0; }
+.grid > *, .flex > * { min-width: 0; }
+.skip-link { position: fixed; top: .5rem; left: .5rem; z-index: 100; padding: .75rem 1rem; border-radius: .75rem; background: #fff; color: #354978; transform: translateY(-150%); }
+.skip-link:focus { transform: translateY(0); }
+@media (max-width: 639px) {
+  header a, header button { min-height: 44px; }
+  footer { padding-bottom: 6rem !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
